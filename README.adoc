@@ -1,0 +1,80 @@
+== prototype-application
+
+To run this application you will need to download Project Lombok to your IDE.
+
+== create SOAP project from http://localhost:8080/ws/subscribers.wsdl
+GetAllSubscribers - Example Input
+----
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:prot="http://serdarkucuklu.com/prototype">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <prot:GetAllSubscribersRequest/>
+   </soapenv:Body>
+</soapenv:Envelope>
+----
+GetAllSubscribers - Example Output
+----
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns2:GetAllSubscribersResponse xmlns:ns2="http://serdarkucuklu.com/prototype">
+         <ns2:GetSubscriberById>
+            <ns2:id>1</ns2:id>
+            <ns2:name>Stephan King</ns2:name>
+            <ns2:msisdn>905552551122</ns2:msisdn>
+         </ns2:GetSubscriberById>
+         <ns2:GetSubscriberById>
+            <ns2:id>2</ns2:id>
+            <ns2:name>Alice Gracy</ns2:name>
+            <ns2:msisdn>905552551133</ns2:msisdn>
+         </ns2:GetSubscriberById>
+         <ns2:GetSubscriberById>
+            <ns2:id>3</ns2:id>
+            <ns2:name>Glory Wisdom</ns2:name>
+            <ns2:msisdn>905552551144</ns2:msisdn>
+         </ns2:GetSubscriberById>
+      </ns2:GetAllSubscribersResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+----
+GetSubscriberById - Example Input
+----
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:prot="http://serdarkucuklu.com/prototype">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <prot:GetSubscriberByIdRequest>
+         <prot:id>2</prot:id>
+      </prot:GetSubscriberByIdRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
+----
+GetSubscriberById - Example Output
+----
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+   <SOAP-ENV:Header/>
+   <SOAP-ENV:Body>
+      <ns2:GetSubscriberByIdResponse xmlns:ns2="http://serdarkucuklu.com/prototype">
+         <ns2:GetSubscriberById>
+            <ns2:id>2</ns2:id>
+            <ns2:name>Alice Gracy</ns2:name>
+            <ns2:msisdn>905552551133</ns2:msisdn>
+         </ns2:GetSubscriberById>
+      </ns2:GetSubscriberByIdResponse>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
+----
+
+== create REST project
+Send POST request with http://localhost:8080 endpoint and example /subscribers/subscriber/12&Serdar&905547906654
+Send PUT request with http://localhost:8080 endpoint and example /subscribers/subscriber/3&Hakan&905438915178
+Send DELETE request with http://localhost:8080 endpoint and example /subscribers/subscriber/3
+
+
+
+
+ 
+----
+$ mvn spring-boot:run
+----
+
+http://localhost:8080/services/holidayService/holiday.wsdl will now display the generated WSDL.

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://serdarkucuklu.com/prototype"
+	xmlns:tns="http://serdarkucuklu.com/prototype" elementFormDefault="qualified">
+	<element name="GetSubscriberByIdRequest">
+		<!-- <id>10</id> -->
+		<complexType>
+			<sequence>
+				<element name="id" maxOccurs="1" type="integer" />
+			</sequence>
+		</complexType>
+	</element>
+	<element name="GetSubscriberByIdResponse">
+		<complexType>
+			<sequence>
+				<element name="Subscribers" type="tns:Subscribers" />
+			</sequence>
+		</complexType>
+	</element>
+	<element name="GetAllSubscribersRequest">
+		<complexType></complexType>
+	</element>
+	<element name="GetAllSubscribersResponse">
+		<complexType>
+			<sequence>
+				<element name="Subscribers" type="tns:Subscribers"
+					maxOccurs="unbounded" />
+			</sequence>
+		</complexType>
+	</element>
+	<complexType name="Subscribers">
+		<sequence>
+			<element name="id" type="integer" />
+			<element name="name" type="string" />
+			<element name="msisdn" type="string" />
+		</sequence>
+	</complexType>
+</schema>
