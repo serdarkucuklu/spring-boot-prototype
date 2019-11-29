@@ -66,7 +66,7 @@ GetSubscriberById - Example Output
 
 == create REST project
 Send POST request with http://localhost:8080 endpoint and example /subscribers/subscriber/12&Serdar&905547906654
-Send PUT request with http://localhost:8080 endpoint and example /subscribers/subscriber/3&Hakan&905438915178
+Send PUT request with http://localhost:8080 endpoint and example /subscribers/subscriber/3&Hakan&905438915178   
 Send DELETE request with http://localhost:8080 endpoint and example /subscribers/subscriber/3
  
 ----
